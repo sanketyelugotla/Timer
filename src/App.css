@@ -1,0 +1,47 @@
+.Body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+h1 {
+    margin: 15px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    border-radius: 8px;
+    border: none;
+    width: 80px;
+    height: 45px;
+}
+
+form {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="number"] {
+    padding: 10px 10px 10px 20px;
+    height: 30px;
+    width: 200px;
+    margin: 10px 0;
+    font-size: 15px;
+}
