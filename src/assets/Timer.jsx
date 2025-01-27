@@ -50,6 +50,7 @@ export default function Timer() {
 
     function handleSet(event) {
         event.preventDefault();
+        setIsRunning(false)
         const secs = input.workTime * 60;
         const min = Math.floor(secs / 60);
         const sec = secs % 60;
@@ -67,15 +68,26 @@ export default function Timer() {
     return (
         <div className="main">
             <h1>Timer</h1>
-            <h1>{workTime.min}:{workTime.sec}</h1>
+            <h1>{workTime.min < 10 ? "0" + workTime.min : workTime.min}:{workTime.sec < 10 ? "0" + workTime.sec : workTime.sec}</h1>
             <h1>It's {isWork ? "Work" : "Rest"} Time</h1>
             <div>
-                <button onClick={() => setIsRunning(true)}>Start</button>
-                <button onClick={() => setIsRunning(false)}>Stop</button>
-                <button onClick={() => {
-                    setIsRunning(false);
-                    setWorkTime({ min: 25, sec: 0 })
-                }}>Reset</button>
+                <button
+                    onClick={() => setIsRunning(true)}
+                    disabled={isRunning ? true : false}
+                >
+                    Start
+                </button>
+                <button
+                    onClick={() => setIsRunning(false)}
+                    disabled={isRunning ? false : true}
+                >
+                    Stop
+                </button>
+                <button
+                    onClick={handleSet}
+                >
+                    Reset
+                </button>
             </div>
             <form>
                 <div className="input">
